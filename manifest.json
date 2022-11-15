@@ -1,0 +1,95 @@
+{
+	"_version": "1.15.0",
+	"sap.app": {
+		"id": "lkrr.component.snow.cardContentControls",
+		"type": "card",
+		"title": "Create a SNOW incident",
+		"subTitle": "Create a SNOW incident",
+		"applicationVersion": {
+			"version": "1.0.15"
+		},
+		"shortTitle": "Create a SNOW incident",
+		"info": "Create a SNOW incident",
+		"description": "Create a SNOW incident",
+		"tags": {
+			"keywords": [
+				"Component",
+				"Card",
+				"Sample"
+			]
+        },
+        "dataSources": {
+	  "SFSFData": {
+
+		"uri": "../destinations/SFADMIN/odata/v2",
+		"type": "OData",
+		"settings": {
+		  "odataVersion": "2.0"
+		}
+	  }
+	}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://wounds-doc"
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "lkrr.component.snow.cardContentControls.View",
+			"type": "XML",
+            "async": true,
+  			"id": "appo"
+		},
+		"dependencies": {
+			"minUI5Version": "1.38",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"config": {
+			"sample": {
+				"stretch": true,
+				"files": [
+					"Card.controller.js"
+				]
+			}
+        },
+        "routing": {
+		"targets": {
+			"myTarget": {
+				"viewName": "appo",
+				"viewId": "appo"
+				}
+			}
+        },
+        "componentUsages": {
+            "reuseName": {
+            "name": "embeddedComponent.name",
+            "settings": {
+                "id": "embeddedComponentID"
+         }
+      }
+   }                
+	},
+	"sap.card": {
+        "type": "Component",
+		"configuration": {
+			"destinations": {
+				"SFSFDestination": {
+					"name": "SFADMIN"
+				}
+            }
+                    
+        },
+        
+		"header": {
+			"icon": {
+				"src": "sap-icon://wounds-doc"
+			},
+			"title": "Create an Incident",
+			"subTitle": "You’ll receive an email."
+		}
+	}
+}
